@@ -20,6 +20,8 @@ public let KLineUperChartDidTap = "KLineUperChartDidTap"
 
 public class HSKLineView: UIView {
 
+    public var delegate:HSKLineViewDelegate?
+    
     var scrollView: UIScrollView!
     var kLine: HSKLine!
     var upFrontView: HSKLineUpFrontView!
@@ -205,6 +207,10 @@ public class HSKLineView: UIView {
                 let preData = kLine.dataK[preIndex]
                 
                 upFrontView.drawCrossLine(pricePoint: CGPoint(x: centerX, y: highLightClose), volumePoint: CGPoint(x: centerX, y: highLightVolume), model: entity)
+                
+                if let delegate = self.delegate{
+                    delegate.showSelectedCandleInfo(model: entity)
+                }
                 
                 let userInfo: [AnyHashable: Any]? = ["preClose" : preData.close, "kLineEntity" : entity]
                 NotificationCenter.default.post(name: Notification.Name(rawValue: KLineChartLongPress), object: self, userInfo: userInfo)

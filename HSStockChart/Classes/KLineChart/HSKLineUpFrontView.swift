@@ -66,11 +66,11 @@ class HSKLineUpFrontView: UIView, HSDrawLayerProtocol {
     }
     
     func drawMarkLayer() {
-        rrText = getYAxisMarkLayer(frame: frame, text: "不复权", y: theme.viewMinYGap, isLeft: true)
-        volText = getYAxisMarkLayer(frame: frame, text: "成交量", y: lowerChartTop + theme.volumeGap, isLeft: true)
         maxMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: theme.viewMinYGap, isLeft: false)
         minMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: uperChartHeight - theme.viewMinYGap, isLeft: false)
         midMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: uperChartHeight / 2, isLeft: false)
+        rrText = getYAxisMarkLayer(frame: frame, text: "", y: theme.viewMinYGap, isLeft: true)
+        volText = getYAxisMarkLayer(frame: frame, text: "", y: lowerChartTop + theme.volumeGap, isLeft: true)
         maxVolMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: lowerChartTop + theme.volumeGap, isLeft: false)
         self.layer.addSublayer(rrText)
         self.layer.addSublayer(volText)

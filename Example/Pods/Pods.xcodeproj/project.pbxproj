@@ -33,6 +33,8 @@
 		64D11F767906D562E9B8A72DA5975D2D /* HSKLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51831158F34D619D7C0312A7B6494C /* HSKLineModel.swift */; };
 		75CF6065351F980B06D392A7520E9472 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A767AB5BA48B88135EC996E5178BCA /* ConstraintItem.swift */; };
 		79F4F1DEC32DA42947C3319DFB5C1E6D /* HSTimeLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B08EB3F97D4274D7DB76E01F07A06A /* HSTimeLineModel.swift */; };
+		81DC236D20A0B22C0086B847 /* HSKLineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC236C20A0B22C0086B847 /* HSKLineViewDelegate.swift */; };
+		81DC236E20A0B22C0086B847 /* HSKLineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC236C20A0B22C0086B847 /* HSKLineViewDelegate.swift */; };
 		82008B2B2AD24384D40B9A216BC1B5A3 /* HSKLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAB65678E9F1925E9F0E7423444DB0 /* HSKLine.swift */; };
 		84AE32FC392FBCE308985D5E6548199C /* Pods-HSStockChart_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E03A36FB04515F758038EBBF6C8B61EE /* Pods-HSStockChart_Example-dummy.m */; };
 		85D4C58EE8043F8B47A2A279A0E134CB /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D865A66289D2CB6ED17238FB231474 /* LayoutConstraintItem.swift */; };
@@ -143,6 +145,7 @@
 		7F1611CC79155E6E4B0B49D6485AC8B0 /* HSStockChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HSStockChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		802260B602D0A09395B8FE1CB8B2F292 /* HSStockChart.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HSStockChart.xcconfig; sourceTree = "<group>"; };
 		80B030F19762431F06E880A3482D2762 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		81DC236C20A0B22C0086B847 /* HSKLineViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSKLineViewDelegate.swift; sourceTree = "<group>"; };
 		85C8E823700E4569CD3717CDB1418BF4 /* HSStockChart-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HSStockChart-prefix.pch"; sourceTree = "<group>"; };
 		866CC4ADF96B2D78A14E1A055B416A3F /* HSKLineStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HSKLineStyle.swift; sourceTree = "<group>"; };
 		8AD6A1744B06DDEC836499D3B82AAD89 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
@@ -248,6 +251,7 @@
 				866CC4ADF96B2D78A14E1A055B416A3F /* HSKLineStyle.swift */,
 				50BD586817933CC1BDBAF101A1BC945C /* HSKLineUpFrontView.swift */,
 				6A1278F15537357A53CD4B0E8BE6CFD6 /* HSKLineView.swift */,
+				81DC236C20A0B22C0086B847 /* HSKLineViewDelegate.swift */,
 			);
 			name = KLineChart;
 			path = HSStockChart/Classes/KLineChart;
@@ -578,6 +582,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					0E2F58CF765708FD85B2FAE2AAB75C00 = {
+						LastSwiftMigration = 0930;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -646,6 +655,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81DC236E20A0B22C0086B847 /* HSKLineViewDelegate.swift in Sources */,
 				84AE32FC392FBCE308985D5E6548199C /* Pods-HSStockChart_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B6E226106C629ABFEBB2312756D7815 /* Extension.swift in Sources */,
+				81DC236D20A0B22C0086B847 /* HSKLineViewDelegate.swift in Sources */,
 				421BD761336FA96921819871C419F918 /* HSDrawLayerProtocol.swift in Sources */,
 				82008B2B2AD24384D40B9A216BC1B5A3 /* HSKLine.swift in Sources */,
 				1A6CE6FEC2180992FF70D16A49895F64 /* HSKLineCoordModel.swift in Sources */,
@@ -805,6 +816,7 @@
 			baseConfigurationReference = E354935501EACF63C839B74EE925C999 /* Pods-HSStockChart_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -828,6 +840,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -937,6 +950,7 @@
 			baseConfigurationReference = DC27225953B71418A926AF79B69F2B68 /* Pods-HSStockChart_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -961,6 +975,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

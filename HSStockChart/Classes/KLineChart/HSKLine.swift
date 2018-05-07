@@ -117,7 +117,7 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
         drawxAxisTimeMarkLayer()
         drawCandleChartLayer(array: positionModels)
         drawVolumeLayer(array: positionModels)
-        drawMALayer(array: positionModels)
+        //drawMALayer(array: positionModels)
     }
     
     /// 计算当前显示区域的最大最小值
@@ -140,19 +140,19 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
                     
                     self.maxVolume = self.maxVolume > entity.volume ? self.maxVolume : entity.volume
                     
-                    let tempMAMax = max(entity.ma5, entity.ma10, entity.ma20)
-                    self.maxMA = self.maxMA > tempMAMax ? self.maxMA : tempMAMax
-                    
-                    let tempMAMin = min(entity.ma5, entity.ma10, entity.ma20)
-                    self.minMA = self.minMA < tempMAMin ? self.minMA : tempMAMin
-                    
-                    let tempMax = max(abs(entity.diff), abs(entity.dea), abs(entity.macd))
-                    self.maxMACD = tempMax > self.maxMACD ? tempMax : self.maxMACD
+//                    let tempMAMax = max(entity.ma5, entity.ma10, entity.ma20)
+//                    self.maxMA = self.maxMA > tempMAMax ? self.maxMA : tempMAMax
+//
+//                    let tempMAMin = min(entity.ma5, entity.ma10, entity.ma20)
+//                    self.minMA = self.minMA < tempMAMin ? self.minMA : tempMAMin
+//
+//                    let tempMax = max(abs(entity.diff), abs(entity.dea), abs(entity.macd))
+//                    self.maxMACD = tempMax > self.maxMACD ? tempMax : self.maxMACD
                 }
             }
             // 当均线数据缺失时候，注意注释这段，不然 minPrice 为 0，导致整体绘画比例不对
-            self.maxPrice = self.maxPrice > self.maxMA ? self.maxPrice : self.maxMA
-            self.minPrice = self.minPrice < self.minMA ? self.minPrice : self.minMA
+//            self.maxPrice = self.maxPrice > self.maxMA ? self.maxPrice : self.maxMA
+//            self.minPrice = self.minPrice < self.minMA ? self.minPrice : self.minMA
         }
     }
     
