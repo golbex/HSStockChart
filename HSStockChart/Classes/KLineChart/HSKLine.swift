@@ -173,7 +173,7 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
             volumeUnit = (lowerChartHeight - theme.volumeGap) / self.maxVolume
         }
         let count = (startIndex + countOfshowCandle + 1) > data.count ? data.count : (startIndex + countOfshowCandle + 1)
-        if startIndex < count {
+        if startIndex < count && count > 0 {
             for index in startIndex ..< count {
                 let model = data[index]
                 let leftPosition = startX + CGFloat(index - startIndex) * (theme.candleWidth + theme.candleGap)

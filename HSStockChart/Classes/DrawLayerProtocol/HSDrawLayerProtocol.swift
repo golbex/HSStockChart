@@ -127,9 +127,9 @@ extension HSDrawLayerProtocol {
 
         if model.isKind(of: HSKLineModel.self) {
             let entity = model as! HSKLineModel
-            yAxisMarkString = entity.close.hschart.toStringWithFormat(".2")
-            bottomMarkerString = entity.date.hschart.toDate("yyyyMMddHHmmss")?.hschart.toString("MM-dd") ?? ""
-            volumeMarkerString = entity.volume.hschart.toStringWithFormat(".2")
+            //yAxisMarkString = entity.close.hschart.toStringWithFormat(".2")
+//            bottomMarkerString = entity.date.hschart.toDate("yyyyMMddHHmmss")?.hschart.toString("MM-dd") ?? ""
+//            volumeMarkerString = entity.volume.hschart.toStringWithFormat(".2")
 
         } else if model.isKind(of: HSTimeLineModel.self){
             let entity = model as! HSTimeLineModel
@@ -211,9 +211,9 @@ extension HSDrawLayerProtocol {
                                         backgroundColor: theme.textColor)
 
         highlightLayer.addSublayer(corssLineLayer)
-        highlightLayer.addSublayer(yAxisMarkLayer)
-        highlightLayer.addSublayer(bottomMarkLayer)
-        highlightLayer.addSublayer(volMarkLayer)
+//        highlightLayer.addSublayer(yAxisMarkLayer)
+//        highlightLayer.addSublayer(bottomMarkLayer)
+//        highlightLayer.addSublayer(volMarkLayer)
         
         return highlightLayer
     }
