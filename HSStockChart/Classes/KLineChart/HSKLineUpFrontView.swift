@@ -9,6 +9,7 @@
 import UIKit
 
 class HSKLineUpFrontView: UIView, HSDrawLayerProtocol {
+    var delegate: HSDrawLayerDelegete?
     
     var rrText = CATextLayer()
     var volText = CATextLayer()

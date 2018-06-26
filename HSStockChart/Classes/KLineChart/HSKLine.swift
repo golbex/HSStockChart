@@ -18,6 +18,8 @@ class HSCAShapeLayer: CAShapeLayer {
 
 
 public class HSKLine: UIView, HSDrawLayerProtocol {
+    var delegate: HSDrawLayerDelegete?
+    
 
     var kLineType: HSChartType = HSChartType.kLineForDay
     var theme = HSKLineStyle()
@@ -253,8 +255,8 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
             let volLayer = drawLine(lineWidth: theme.candleWidth,
                                     startPoint: model.volumeStartPoint,
                                     endPoint: model.volumeEndPoint,
-                                    strokeColor: model.candleFillColor,
-                                    fillColor: model.candleFillColor)
+                                    strokeColor: theme.volumeColor,
+                                    fillColor: theme.volumeColor)
             volumeLayer.addSublayer(volLayer)
         }
         self.layer.addSublayer(volumeLayer)

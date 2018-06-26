@@ -9,6 +9,8 @@
 import UIKit
 
 public class HSTimeLine: UIView, HSDrawLayerProtocol {
+    var delegate: HSDrawLayerDelegete?
+    
     
     var timeLineLayer = CAShapeLayer()
     var volumeLayer = CAShapeLayer()

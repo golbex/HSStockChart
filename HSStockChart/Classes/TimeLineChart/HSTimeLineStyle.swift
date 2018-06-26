@@ -34,8 +34,8 @@ public struct HSTimeLineStyle {
     
     func getTextSize(text: String) -> CGSize {
         let size = text.size(withAttributes: [NSAttributedStringKey.font: baseFont])
-        let width = ceil(size.width) + 5
-        let height = ceil(size.height)
+        let width = ceil(size.width)
+        let height = ceil(size.height) + 4
         
         return CGSize(width: width, height: height)
     }

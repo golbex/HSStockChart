@@ -36,6 +36,7 @@ public struct HSKLineStyle {
     var priceLineCorlor = UIColor.hschart.color(rgba: "#0095ff")
     var avgLineCorlor = UIColor.hschart.color(rgba: "#ffc004") // 均线颜色
     var fillColor = UIColor.hschart.color(rgba: "#e3efff")
+    var volumeColor = UIColor.hschart.color(rgba: "#4c596b")
     
     var baseFont = UIFont.systemFont(ofSize: 10)
     

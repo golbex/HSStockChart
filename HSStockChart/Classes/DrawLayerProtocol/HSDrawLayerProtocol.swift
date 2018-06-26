@@ -20,7 +20,7 @@ public enum HSChartType: Int {
 protocol HSDrawLayerProtocol {
     
     var theme: HSTimeLineStyle { get }
-    
+    var delegate: HSDrawLayerDelegete?{ get set}
     func drawLine(lineWidth: CGFloat, startPoint: CGPoint, endPoint: CGPoint, strokeColor: UIColor, fillColor: UIColor, isDash: Bool, isAnimate: Bool) -> CAShapeLayer
     
     func drawTextLayer(frame: CGRect, text: String, foregroundColor: UIColor, backgroundColor: UIColor, fontSize: CGFloat) -> CATextLayer
@@ -29,13 +29,15 @@ protocol HSDrawLayerProtocol {
     
     
 }
+public protocol HSDrawLayerDelegete {
+    func getCandleInfo(model:AnyObject?)->String
+}
 
 extension HSDrawLayerProtocol {
     
     var theme: HSTimeLineStyle {
         return HSTimeLineStyle()
     }
-    
     func drawLine(lineWidth: CGFloat,
                   startPoint: CGPoint,
                   endPoint: CGPoint,
@@ -83,7 +85,7 @@ extension HSDrawLayerProtocol {
         textLayer.fontSize = fontSize
         textLayer.foregroundColor = foregroundColor.cgColor
         textLayer.backgroundColor = backgroundColor.cgColor
-        textLayer.alignmentMode = kCAAlignmentCenter
+        textLayer.alignmentMode = kCAAlignmentLeft
         textLayer.contentsScale = UIScreen.main.scale
         
         return textLayer
@@ -127,6 +129,9 @@ extension HSDrawLayerProtocol {
 
         if model.isKind(of: HSKLineModel.self) {
             let entity = model as! HSKLineModel
+            if let delegate = self.delegate{
+                yAxisMarkString = delegate.getCandleInfo(model: entity)
+            }
             //yAxisMarkString = entity.close.hschart.toStringWithFormat(".2")
 //            bottomMarkerString = entity.date.hschart.toDate("yyyyMMddHHmmss")?.hschart.toString("MM-dd") ?? ""
 //            volumeMarkerString = entity.volume.hschart.toStringWithFormat(".2")
@@ -177,7 +182,7 @@ extension HSDrawLayerProtocol {
             labelX = frame.maxX - yAxisMarkSize.width
         }
         labelY = pricePoint.y - yAxisMarkSize.height / 2.0
-        yAxisMarkLayer = drawTextLayer(frame: CGRect(x: labelX, y: labelY, width: yAxisMarkSize.width, height: yAxisMarkSize.height),
+        yAxisMarkLayer = drawTextLayer(frame: CGRect(x: labelX, y: labelY, width: yAxisMarkSize.width, height: yAxisMarkSize.height-2),
                                        text: yAxisMarkString,
                                        foregroundColor: UIColor.white,
                                        backgroundColor: theme.textColor)
@@ -211,7 +216,7 @@ extension HSDrawLayerProtocol {
                                         backgroundColor: theme.textColor)
 
         highlightLayer.addSublayer(corssLineLayer)
-//        highlightLayer.addSublayer(yAxisMarkLayer)
+        highlightLayer.addSublayer(yAxisMarkLayer)
 //        highlightLayer.addSublayer(bottomMarkLayer)
 //        highlightLayer.addSublayer(volMarkLayer)
         
